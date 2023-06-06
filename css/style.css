@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Amita:wght@700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/*creamos variable para aplicar el color y si cambiamos el color corporativo que sea sencillo*/
+:root {
+    --colorCorporatiu:#6A533F;
+}
+
+/*para visualizar la imagen y que no desborde la pantalla al no ser de 1900px*/
+#main-foto {
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Amita';
+    font-size: 60px;
+}
+
+h2 {
+    text-align: center;
+    font-family: 'Amita';
+    font-size: 30px;
+}
+
+header {
+    position: relative;/*para poder desplazar logo en imagen principal*/
+}
+
+#logo-header {
+    position: absolute;/*para mover el logo en la posicion deseada*/
+    top: 20px;
+    left: 150px;
+
+}
+
+body {
+    background-image: url(/img/background.png);/*He encontrado la manera de poner la imagen de fondo en el CSS y no en el HTML*/
+}
+
+.standardWidth {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.flex-around {
+    height: 80px;
+    display: flex;
+    justify-content: space-around;/*para separar elementos entre ellos sin llegar a los extremos*/
+    align-items: center;/*para centrar los elementos del menú en el nav*/
+}
+
+nav {
+    border-bottom: solid 5px black;
+}
+
+nav a {
+    text-decoration: none;
+    font-size: 24px;
+    color: black;
+    padding: 10px;/*incrementar el tamaño del marco, así el efecto hover no mueve el contenido*/
+}
+
+nav img {
+    width: 10%;
+}
+
+nav a:hover {
+    background-color: var(--colorCorporatiu);
+    color: white;
+    padding: 10px;/*coincide con el nav a para aumentar el tamaño y así crear mejor efecto*/
+}
+
+.main-flex {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;/*separar contenido y que no quede "pegado" una columna con otra*/
+}
+
+section {
+    border: solid 10px transparent;
+}
+
+section:hover {
+    border: solid 10px var(--colorCorporatiu);
+    background-color: var(--colorCorporatiu);
+    color: white;
+}
+
+section p {
+    padding: 20px;/*para que el texto de los parágrafos no se vea pegado al margen de las secciones*/
+    font-size: 20px;
+}
+
+footer {
+    background-color: var(--colorCorporatiu);
+    padding: 10px 0;
+    margin-top: 10px;/*separa el footer del main*/
+}
+
+footer > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+footer > div > img {
+    width: 80px;
+}
+
+@media (max-width:767px) {/*para hacerlo algo responsive y posicionar los elemntos en columna única y el logo al otro lado*/
+    main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header {
+        position: relative;/*para poder desplazar logo en imagen principal*/
+    }
+
+    #logo-header {
+        position: absolute;
+        top: 5px;
+        left: 450px;
+    }
+
+}
